@@ -1,0 +1,4 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.paascloud.elastic.lite.autoconfigure.RegistryCenterConfiguration,\
+  com.paascloud.elastic.lite.autoconfigure.ElasticJobAutoConfiguration

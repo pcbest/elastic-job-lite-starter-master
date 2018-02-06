@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.liuzm.paascloud</groupId>
+  <artifactId>elastic-job-lite-starter-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>elastic-job-lite-starter</module>
+    <module>elastic-job-lite-starter-demo</module>
+  </modules>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.7.RELEASE</version>
+  </parent>
+
+  <developers>
+    <developer>
+      <name>刘兆明</name>
+      <url>https://paascloud.net</url>
+      <email>paascloud.net@gmail.com</email>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <elastic-job-lite.version>2.1.5</elastic-job-lite.version>
+    <curator.version>2.12.0</curator.version>
+    <lombok.version>1.16.18</lombok.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>elastic-job-common-core</artifactId>
+        <groupId>com.dangdang</groupId>
+        <version>${elastic-job-lite.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>elastic-job-lite-core</artifactId>
+        <groupId>com.dangdang</groupId>
+        <version>${elastic-job-lite.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>elastic-job-lite-spring</artifactId>
+        <groupId>com.dangdang</groupId>
+        <version>${elastic-job-lite.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-client</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>${curator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
