@@ -12,5 +12,15 @@ public class Foo {
 	/**
 	 * The Id.
 	 */
-	Long id;
+	private Long id;
+
+	/**
+	 * Instantiates a new Foo.
+	 *
+	 * @param id the id
+	 */
+	public Foo(Long id) {
+		this.id = id;
+	}
+
 }
