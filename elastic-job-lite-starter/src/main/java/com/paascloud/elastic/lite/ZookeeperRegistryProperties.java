@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author paascloud.net @gmail.com
  */
 @Data
-@ConfigurationProperties(prefix = "paascloud.job.zookeeper")
+@ConfigurationProperties(prefix = "paascloud.zk")
 public class ZookeeperRegistryProperties {
 
 	/**
@@ -18,7 +18,7 @@ public class ZookeeperRegistryProperties {
 	 * 多个地址用逗号分隔
 	 * 如: host1:2181,host2:2181
 	 */
-	private String serverLists;
+	private String zkAddressList;
 
 	/**
 	 * Zookeeper的命名空间

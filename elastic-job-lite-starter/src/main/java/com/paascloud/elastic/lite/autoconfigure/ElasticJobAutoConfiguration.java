@@ -42,7 +42,7 @@ import java.util.Objects;
  * @author paascloud.net @gmail.com
  */
 @Configuration
-@ConditionalOnExpression("'${elaticjob.zookeeper.server-lists}'.length() > 0")
+@ConditionalOnExpression("'${paascloud.zk.zkAddressList}'.length() > 0")
 public class ElasticJobAutoConfiguration {
 
 	@Resource

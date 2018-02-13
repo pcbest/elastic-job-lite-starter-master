@@ -35,6 +35,9 @@
     <elastic-job-lite.version>2.1.5</elastic-job-lite.version>
     <curator.version>2.12.0</curator.version>
     <lombok.version>1.16.18</lombok.version>
+    <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+    <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+    <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
