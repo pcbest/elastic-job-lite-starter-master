@@ -42,7 +42,7 @@ import java.util.Objects;
  * @author paascloud.net @gmail.com
  */
 @Configuration
-@ConditionalOnExpression("'${paascloud.zk.zkAddressList}'.length() > 0")
+@ConditionalOnExpression("'${elaticjob.zookeeper.server-lists}'.length() > 0")
 public class ElasticJobAutoConfiguration {
 
 	@Resource
@@ -83,7 +83,6 @@ public class ElasticJobAutoConfiguration {
 	 * 获取作业事件追踪的数据源配置
 	 *
 	 * @param eventTraceRdbDataSource 作业事件追踪的数据源Bean引用
-	 *
 	 * @return JobEventRdbConfiguration
 	 */
 	private JobEventRdbConfiguration getJobEventRdbConfiguration(String eventTraceRdbDataSource) {
@@ -101,7 +100,6 @@ public class ElasticJobAutoConfiguration {
 	 * 获取作业任务类型
 	 *
 	 * @param elasticJob 作业任务
-	 *
 	 * @return JobType
 	 */
 	private JobType getJobType(ElasticJob elasticJob) {
@@ -121,7 +119,6 @@ public class ElasticJobAutoConfiguration {
 	 *
 	 * @param jobName          任务执行名称
 	 * @param elasticJobConfig 任务配置
-	 *
 	 * @return JobCoreConfiguration
 	 */
 	private JobCoreConfiguration getJobCoreConfiguration(String jobName, ElasticJobConfig elasticJobConfig) {
@@ -146,7 +143,6 @@ public class ElasticJobAutoConfiguration {
 	 * @param jobType          任务类型
 	 * @param jobClass         任务执行类
 	 * @param elasticJobConfig 任务配置
-	 *
 	 * @return LiteJobConfiguration
 	 */
 	private LiteJobConfiguration getLiteJobConfiguration(final JobType jobType, final Class<? extends ElasticJob> jobClass, ElasticJobConfig elasticJobConfig) {
@@ -178,7 +174,6 @@ public class ElasticJobAutoConfiguration {
 	 * @param jobClass             作业类
 	 * @param streamingProcess     是否流式处理数据
 	 * @param scriptCommandLine    脚本型作业执行命令行
-	 *
 	 * @return JobTypeConfiguration
 	 */
 	private JobTypeConfiguration getJobTypeConfiguration(JobCoreConfiguration jobCoreConfiguration, JobType jobType,
@@ -198,7 +193,6 @@ public class ElasticJobAutoConfiguration {
 	 * 获取监听器
 	 *
 	 * @param elasticJobConfig 任务配置
-	 *
 	 * @return ElasticJobListener[]
 	 */
 	private ElasticJobListener[] createElasticJobListeners(ElasticJobConfig elasticJobConfig) {
@@ -233,7 +227,6 @@ public class ElasticJobAutoConfiguration {
 	 * 创建每台作业节点均执行的监听
 	 *
 	 * @param listener 监听者
-	 *
 	 * @return ElasticJobListener
 	 */
 	private ElasticJobListener createElasticJobListener(Class<? extends ElasticJobListener> listener) {
@@ -255,12 +248,11 @@ public class ElasticJobAutoConfiguration {
 	 * @param distributedListener          监听者
 	 * @param startedTimeoutMilliseconds   最后一个作业执行前的执行方法的超时时间 单位：毫秒
 	 * @param completedTimeoutMilliseconds 最后一个作业执行后的执行方法的超时时间 单位：毫秒
-	 *
 	 * @return AbstractDistributeOnceElasticJobListener
 	 */
 	private AbstractDistributeOnceElasticJobListener createAbstractDistributeOnceElasticJobListener(Class<? extends AbstractDistributeOnceElasticJobListener> distributedListener,
-	                                                                                                long startedTimeoutMilliseconds,
-	                                                                                                long completedTimeoutMilliseconds) {
+	                                                                                               long startedTimeoutMilliseconds,
+	                                                                                               long completedTimeoutMilliseconds) {
 		//判断是否配置了监听者
 		if (Objects.equals(distributedListener, AbstractDistributeOnceElasticJobListener.class)) {
 			return null;
@@ -277,7 +269,6 @@ public class ElasticJobAutoConfiguration {
 	 * 注册每台作业节点均执行的监听到spring容器
 	 *
 	 * @param listener 监听者
-	 *
 	 * @return ElasticJobListener
 	 */
 	private ElasticJobListener registerElasticJobListener(Class<? extends ElasticJobListener> listener) {
@@ -293,7 +284,6 @@ public class ElasticJobAutoConfiguration {
 	 * @param distributedListener          监听者
 	 * @param startedTimeoutMilliseconds   最后一个作业执行前的执行方法的超时时间 单位：毫秒
 	 * @param completedTimeoutMilliseconds 最后一个作业执行后的执行方法的超时时间 单位：毫秒
-	 *
 	 * @return AbstractDistributeOnceElasticJobListener
 	 */
 	private AbstractDistributeOnceElasticJobListener registerAbstractDistributeOnceElasticJobListener(Class<? extends AbstractDistributeOnceElasticJobListener> distributedListener,

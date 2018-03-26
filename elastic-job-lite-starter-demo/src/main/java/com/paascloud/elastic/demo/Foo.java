@@ -1,5 +1,6 @@
 package com.paascloud.elastic.demo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -8,19 +9,10 @@ import lombok.Data;
  * @author paascloud.net @gmail.com
  */
 @Data
+@AllArgsConstructor
 public class Foo {
 	/**
 	 * The Id.
 	 */
 	private Long id;
-
-	/**
-	 * Instantiates a new Foo.
-	 *
-	 * @param id the id
-	 */
-	public Foo(Long id) {
-		this.id = id;
-	}
-
 }
