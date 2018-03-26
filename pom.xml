@@ -30,6 +30,20 @@
     <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
   </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>paascloud-lib-rep</id>
+      <url>http://nexus.paascloud.net/content/repositories/paascloud-lib-rep/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>User Project Snapshot</name>
+      <url>http://nexus.paascloud.net/content/repositories/snapshots/</url>
+      <uniqueVersion>true</uniqueVersion>
+    </snapshotRepository>
+  </distributionManagement>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
