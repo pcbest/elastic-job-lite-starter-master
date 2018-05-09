@@ -184,6 +184,7 @@ public class ElasticJobAutoConfiguration {
 			case SCRIPT:
 				return new ScriptJobConfiguration(jobCoreConfiguration, scriptCommandLine);
 			case SIMPLE:
+				return new SimpleJobConfiguration(jobCoreConfiguration, jobClass);
 			default:
 				return new SimpleJobConfiguration(jobCoreConfiguration, jobClass);
 		}
