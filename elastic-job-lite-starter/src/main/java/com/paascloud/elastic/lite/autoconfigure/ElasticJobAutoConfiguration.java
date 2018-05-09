@@ -108,7 +108,7 @@ public class ElasticJobAutoConfiguration {
 		} else if (elasticJob instanceof DataflowJob) {
 			return JobType.DATAFLOW;
 		} else if (elasticJob instanceof ScriptJob) {
-			return JobType.SIMPLE;
+			return JobType.SCRIPT;
 		} else {
 			throw new RuntimeException("unknown JobType [" + elasticJob.getClass() + "]!");
 		}
